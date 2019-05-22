@@ -14,7 +14,8 @@ public class Dice : MonoBehaviour
     private bool coroutineAllowed = true;
     int count = 0;
     int randomQuestion = 0;
-    int secretKeyRandom = 0; 
+    int secretKeyRandom = 0;
+
 
     private void Start()
     {
@@ -24,7 +25,6 @@ public class Dice : MonoBehaviour
         imageObj = GameObject.FindGameObjectWithTag("Finish");
         myimage = imageObj.GetComponent<Image>();
     }
-
     private void OnMouseDown()
     {
         if (!GameControl.gameOver && coroutineAllowed)
@@ -32,10 +32,10 @@ public class Dice : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        Debug.Log("안뇽??");
     }
     private IEnumerator RollTheDice()
     {
+
         coroutineAllowed = false;
         int randomDiceSide = 0;
 
@@ -59,16 +59,20 @@ public class Dice : MonoBehaviour
             case 1: case 25: case 49:
                 // 선도
                 myimage.sprite = Resources.Load<Sprite>("Question/S" + randomQuestion) as Sprite;
+                Destroy(myimage, 5);
                 Debug.Log("선도");
+
             break;
 
             case 2: case 26: case 50:
                 myimage.sprite = Resources.Load<Sprite>("Question/MC" + randomQuestion) as Sprite;
+                Destroy(myimage, 5);
                 Debug.Log("아침청소"); 
             break;
 
             case 3: case 27: case 51:
                 myimage.sprite = Resources.Load<Sprite>("Question/A" + randomQuestion) as Sprite;
+                Destroy(myimage, 5);
                 Debug.Log("주번활동");
                 break;
 
