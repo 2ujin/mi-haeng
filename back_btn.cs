@@ -13,6 +13,8 @@ public class back_btn : MonoBehaviour {
     {
         imageObj = GameObject.FindGameObjectWithTag("Finish");
         myimage = imageObj.GetComponent<Image>();
+        transform.localPosition = new Vector2(-520, -375);
+        transform.localScale = new Vector2(1.5f, 1.5f);
     }
     public void onclickbutton()
     {
