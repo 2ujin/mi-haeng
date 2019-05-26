@@ -25,7 +25,7 @@ public class pratice : MonoBehaviour
 
     public void sundo()
     {
-        Debug.Log(m_inputField.text);
+            Debug.Log("입력한 값 : " + m_inputField.text);
             int answer = 3;
             if (m_inputField.text == answer.ToString())
             {
@@ -34,6 +34,7 @@ public class pratice : MonoBehaviour
                 m_inputField.text = null;
                 correct++;
                 CountText.text = "" + correct;
+                PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
             }
             else
             {
@@ -41,7 +42,8 @@ public class pratice : MonoBehaviour
                 m_inputField.text = null;
                 wrong++;
                 CountText1.text = "" + wrong;
-            }
+                PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
+        }
     }
     public void sundo1()
     {
@@ -62,13 +64,8 @@ public class pratice : MonoBehaviour
             CountText1.text = "" + wrong;
         }
     }
-    public void hi()
-    {
-        Debug.Log("안녕 ㅎㅎ");
-    }
     IEnumerator add()
     {
-        
         yield return new WaitForSeconds(1);//WaitForSeconds객체를 생성해서 반환
         myimage1.sprite = Resources.Load<Sprite>("Question/image") as Sprite;
     }

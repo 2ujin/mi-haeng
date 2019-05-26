@@ -14,13 +14,13 @@ public class result : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        PlayerPrefs.GetInt("correct").ToString();
+        PlayerPrefs.GetInt("wrong").ToString();
     }
 
     // Update is called once per frame
     void awake()
     {
-        DontDestroyOnLoad(gameObject);
     }
 
     public void OnClickButton()
@@ -28,9 +28,7 @@ public class result : MonoBehaviour
         SceneManager.LoadScene("result");
         Debug.Log(n_inputField.text);
         Debug.Log(n1_inputField.text);
-    }
-    public void text()
-    {
+        PlayerPrefs.SetString("n_inputField", n_inputField.text);
 
     }
 }

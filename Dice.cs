@@ -14,6 +14,7 @@ public class Dice : MonoBehaviour
     private int whosTurn = 1;
     private bool coroutineAllowed = true;
     int count = 0;
+    int dice = 0;
     int randomQuestion = 0;
     int secretKeyRandom = 0;
 
@@ -35,14 +36,12 @@ public class Dice : MonoBehaviour
     IEnumerator add1()
     {
         yield return new WaitForSeconds(4);//WaitForSeconds객체를 생성해서 반환
-        Debug.Log("안녕");
         GameObject.FindWithTag("GameController").GetComponent<pratice>().sundo();
     }
     IEnumerator morning()
     {
         yield return new WaitForSeconds(4);//WaitForSeconds객체를 생성해서 반환
-        Debug.Log("안녕");
-        GameObject.FindWithTag("GameController").GetComponent<pratice>().sundo1();
+        GameObject.FindWithTag("GameController").GetComponent<pratice>().sundo();
     }
     IEnumerator dissapear()
     {
@@ -72,7 +71,8 @@ public class Dice : MonoBehaviour
         }
         // Debug.Log(randomDiceSide + 1);
         count += randomDiceSide + 1;
-        Debug.Log(count);
+        dice++;
+        //Debug.Log("주사위 누른 횟수 : " + dice);
 
         randomQuestion = Random.Range(1, 4);
         secretKeyRandom = Random.Range(1, 10);
@@ -223,12 +223,10 @@ public class Dice : MonoBehaviour
             StartCoroutine(add1());
             StartCoroutine(dissapear());
         }
-
-        if (count >= 72)
+        if (count >= 20)
         {
             StartCoroutine(gameover());
         }
-
         GameControl.diceSideThrown = randomDiceSide + 1;
         if (whosTurn == 1)
         {
