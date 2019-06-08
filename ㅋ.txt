@@ -1,0 +1,81 @@
+          case 1: case 25: case 49: // 선도
+                break;
+         case 2: case 26: case 50: // 아침청소
+                break;
+         case 3: case 27: case 51: //주번활동
+                break;
+         case 4: case 28: case 52: //영어회화
+                break;
+         case 5: case 29: case 53: //아침조회
+                break;
+         case 6: case 30: case 54: //징계위원회
+                break;
+         // -----------------------------------------------------------
+
+         // -------------------------보드판 왼쪽------------------------
+         case 7: case 31: case 55: //2-1
+             
+             break;
+         case 8: case 32: case 56: // 황금열쇠
+             
+             break;
+         case 9: case 33: case 57: //앱창1실    
+             
+             break;
+         case 10: case 34: case 58: // 인미1실
+             
+             break;
+         case 11: case 35: case 59: // 2-2반
+             
+             break;  
+         case 12: case 36: case 60:// 점심시간
+            
+             break;
+         // ------------------------------------------------------------
+
+         // --------------------------보드판 위쪽-----------------------
+
+         case 13: case 37: case 61: //건강달리기
+             
+             break;
+         case 14: case 38: case 62: //체육관
+             
+             break;
+         case 15: case 39: case 63: // 황금열쇠
+             
+             break;
+         case 16: case 40: case 64: //청소
+             
+             break;
+         case 17: case 41: case 65: //종례
+            
+             break;
+         case 18: case 42: case 66: //석식시간
+             
+             break;
+         // ------------------------------------------------------------
+
+         // --------------------------보드판 왼쪽-----------------------
+         case 19: case 43: case 67: //황금열쇠
+             
+             break;
+         case 20: case 44: case 68: //방과후
+             
+             break;
+         case 21: case 45: case 69: //매점
+             
+             break;
+         case 22: case 46: case 70: // 고시촌
+             
+             break;
+         case 23: case 47: case 71: //하교
+             
+             break;
+
+         case 24: case 48:  //교문
+             break;
+
+         if(add >= 72){
+                 Debug.Log("게임이 끝났습니다");
+}
+             break;
