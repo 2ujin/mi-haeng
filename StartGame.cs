@@ -5,12 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class StartGame : MonoBehaviour {
-
+    public int[] count;
 	// Use this for initialization
 	void Start () {
         transform.localPosition = new Vector2(-275, 40);
         transform.localScale = new Vector2(0.5f, 0.5f);
-    }
+    }   
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,6 +26,9 @@ public class StartGame : MonoBehaviour {
     }
     public void GameStart()
     {
-        SceneManager.LoadScene("MainGame"); 
+        SceneManager.LoadScene("MainGame");
+        //int count = PlayerPrefs.GetInt("count");
+        //count++;
+        
     }
 }

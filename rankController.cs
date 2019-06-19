@@ -9,10 +9,10 @@ using System;
 
 public class Rank2
 {
-    public int ID;
+    public string ID;
     public string Name;
-    public int Score;
-    public Rank2(int id, string name, int score)
+    public string Score;
+    public Rank2(string id, string name, string score)
     { //값을 채워주기 위해서 생성
         ID = id;
         Name = name;
@@ -42,7 +42,7 @@ public class rankController : MonoBehaviour
 
     IEnumerator Main()
     {
-        yield return StartCoroutine(RankingDbParsing("rankdb.sqlite"));
+        yield return StartCoroutine(RankingDbParsing("gamerankdb.sqlite"));
     }
 
     IEnumerator RankingDbParsing(string p)
@@ -72,7 +72,7 @@ public class rankController : MonoBehaviour
             using (IDbCommand dbCmd = dbConnection.CreateCommand())  // EnterSqL에 명령 할 수 있다. 
             {
 
-                string sqlQuery = "SELECT * FROM RankTable ORDER BY Score DESC";
+                string sqlQuery = "SELECT * FROM GameRankTable ORDER BY Score DESC";
 
 
                 dbCmd.CommandText = sqlQuery;
@@ -86,7 +86,7 @@ public class rankController : MonoBehaviour
                     {
                         //rank1.text =  reader.GetString(0) + "    " + reader.GetString(2);  //  타입명 . (몇 열에있는것을 불를것인가)
 
-                        RankList.Add(new Rank2(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2)));
+                        RankList.Add(new Rank2(reader.GetString(0), reader.GetString(1), reader.GetString(2)));
                     }
                     dbConnection.Close();
                     reader.Close();

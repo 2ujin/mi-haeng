@@ -12,8 +12,7 @@ public class next_btn : MonoBehaviour {
 	void Start () {
         imageObj = GameObject.FindGameObjectWithTag("Finish");
         myimage = imageObj.GetComponent<Image>();
-
-        //transform.localPosition = new Vector2(520, -485);
+        //transform.localPosition = new Vector2(400, -485);
         transform.localScale = new Vector2(1.5f, 1.5f);
     }
 

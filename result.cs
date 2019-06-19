@@ -26,9 +26,10 @@ public class result : MonoBehaviour
     public void OnClickButton()
     {    
         SceneManager.LoadScene("result");
-        Debug.Log(n_inputField.text);
-        Debug.Log(n1_inputField.text);
-        PlayerPrefs.SetString("n_inputField", n_inputField.text);
+
+        PlayerPrefs.SetString("name", n_inputField.text);
+        PlayerPrefs.SetString("number", n1_inputField.text);
+
 
     }
 }

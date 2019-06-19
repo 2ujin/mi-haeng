@@ -17,14 +17,18 @@ public class pratice : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.localPosition = new Vector2(350f, -270);
+        //transform.localPosition = new Vector2(350f, -270);
         transform.localScale = new Vector2(1.5f, 1.5f);
         imageObj1 = GameObject.FindGameObjectWithTag("Player");
         myimage1 = imageObj1.GetComponent<Image>();
         CountText.GetComponent<Text>();
         CountText1.GetComponent<Text>();
+        
     }
-
+    public void hidden()
+    {
+        gameObject.SetActive(false);
+    }
     public void sundo()
     {
             Debug.Log("입력한 값 : " + m_inputField.text);
@@ -57,6 +61,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -64,6 +69,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void jubun()
@@ -76,6 +82,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -83,6 +90,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void english()
@@ -95,6 +103,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -102,6 +111,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void achim()
@@ -114,6 +124,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -121,6 +132,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void punish()
@@ -133,6 +145,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -140,6 +153,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void firstclass()
@@ -152,6 +166,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -159,6 +174,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void secondclass()
@@ -171,6 +187,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -178,6 +195,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void thirdclass()
@@ -190,6 +208,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -197,6 +216,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void fourthclass()
@@ -209,6 +229,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -216,6 +237,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void lunch()
@@ -228,6 +250,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -235,6 +258,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void fiveclass()
@@ -247,6 +271,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -254,6 +279,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void sixclass()
@@ -266,6 +292,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -273,6 +300,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void sevenclass()
@@ -285,6 +313,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -292,6 +321,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void finishschool()
@@ -304,6 +334,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -311,6 +342,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void dinner()
@@ -323,6 +355,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -330,6 +363,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void afterschool()
@@ -342,6 +376,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -349,6 +384,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void store()
@@ -361,6 +397,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -368,6 +405,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void gosi()
@@ -380,6 +418,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -387,6 +426,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void gohome()
@@ -399,6 +439,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -406,6 +447,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void door()
@@ -418,6 +460,7 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             correct++;
             CountText.text = "" + correct;
+            PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
         }
         else
         {
@@ -425,57 +468,46 @@ public class pratice : MonoBehaviour
             m_inputField.text = null;
             wrong++;
             CountText1.text = "" + wrong;
-        }
-    }
-    public void secretKey()
-    {
-        int answer = 2;
-        if (m_inputField.text == answer.ToString())
-        {
-            StartCoroutine(add());
-            myimage1.sprite = Resources.Load<Sprite>("Question/add") as Sprite;
-            m_inputField.text = null;
-            correct++;
-            CountText.text = "" + correct;
-        }
-        else
-        {
-            StartCoroutine(minus());
-            m_inputField.text = null;
-            wrong++;
             CountText1.text = "" + wrong;
+            PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
         }
     }
     public void secretKey_add1() // 상점 +3
     {
         int il = correct + 3;
         CountText.text = "" + il;
+        PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
     }
     public void SecretKey_add2() // 상점 +2
     {
         int il = correct + 2;
         CountText.text = "" + il;
+        PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
     }
     public void SecretKey_add3() // 상점 +1
     {
         int il = correct + 1;
         CountText.text = "" + il;
+        PlayerPrefs.SetInt("correct", int.Parse(CountText.text));
     }
 
     public void SecretKey_minus1() // 벌점 -1
     {
         int il1 = wrong + 1;
         CountText1.text = "" + il1;
+        PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
     }
-    public void SecretKey_minus2() // 벌점 -1
-    {
-        int il1 = wrong + 1;
-        CountText1.text = "" + il1;
-    }
-    public void SecretKey_minus3() // 벌점 -2
+    public void SecretKey_minus2() // 벌점 -2
     {
         int il1 = wrong + 2;
         CountText1.text = "" + il1;
+        PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
+    }
+    public void SecretKey_minus3() // 벌점 -3
+    {
+        int il1 = wrong + 3;
+        CountText1.text = "" + il1;
+        PlayerPrefs.SetInt("wrong", int.Parse(CountText1.text));
     }
     IEnumerator add()
     {

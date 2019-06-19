@@ -17,12 +17,5 @@ public class ranking : MonoBehaviour {
     public void rankingOnclick()
     {
         SceneManager.LoadScene("Ranking");
-        pratice();
-
-    }
-    public void pratice()
-    {
-            float sscore = PlayerPrefs.GetFloat("score");
-        Debug.Log(sscore);
     }
 }

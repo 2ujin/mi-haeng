@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Mono.Data.SqliteClient;
-using UnityEngine.UI;
 using System.IO;
 using System.Data;
-using System;
+
 public class rank
 {
-    public int ID;
+    public string ID;
     public string Name;
-    public double Score;
+    public string Score;
 
-    public rank(int id, string name, double score)
+    public rank(string id, string name, string score)
     {
         ID = id;
         Name = name;
@@ -24,22 +23,30 @@ public class rank
 
 public class realresult : MonoBehaviour
 {
+    public GameObject imageobj;
     public Text nameText;
     public Text correct_card;
     public Text wrong_card;
     public Text resultText;
+    public Text choco;
+    public Text candy;
+    public Image resultImg;
 
     private double Score = 0;
     private double savedScore = 0;
 
     public List<rank> rankList = new List<rank>();
 
+    System.DateTime time = System.DateTime.Now;
+    
     void Start()
     {
         nameText.text = PlayerPrefs.GetString("name") ;
-
         correct_card.text = PlayerPrefs.GetInt("correct").ToString();
         wrong_card.text = PlayerPrefs.GetInt("wrong").ToString();
+
+        choco.text = PlayerPrefs.GetString("choco");
+        candy.text = PlayerPrefs.GetString("candy");
 
         double correct = PlayerPrefs.GetInt("correct");
         double wrong = PlayerPrefs.GetInt("wrong");
@@ -48,21 +55,24 @@ public class realresult : MonoBehaviour
 
         PlayerPrefs.SetString("justscore", Score.ToString("0"));
 
-        Debug.Log(PlayerPrefs.GetString("justscore"));
+        //Debug.Log(PlayerPrefs.GetString("justscore"));
 
-        StartCoroutine(saveDb("rankdb.sqlite"));
+        imageobj = GameObject.FindGameObjectWithTag("Finish");
+        resultImg = imageobj.GetComponent<Image>();
+        resultImg.sprite = Resources.Load<Sprite>("Question/bad") as Sprite;
+        StartCoroutine(saveDb("gamerankdb.sqlite"));
 
-        if (result >= 0.7)
+        if (result >= 0.7) // 70퍼 이상
         {
-           resultText.text = "당신을 진정한 미림인으로 인정합니다 !!!! ♥♥";
+            resultImg.sprite = Resources.Load<Sprite>("Question/best") as Sprite;
         }
-        else if (result >= 0.5)
+        else if (result >= 0.5) //50퍼 이상
         {
-            resultText.text = "미림인이 되기 위해 조금만 더 노력해보세요 :-)";
-}
+            resultImg.sprite = Resources.Load<Sprite>("Question/soso") as Sprite;
+        }
         else
         {
-            resultText.text = "미림인이 되기 위해서는 많이 공부하셔야겠군요!! :-( ";
+            resultImg.sprite = Resources.Load<Sprite>("Question/bad") as Sprite;
         }
     }
 
@@ -82,7 +92,6 @@ public class realresult : MonoBehaviour
 
         string connectionString = "URI=file:" + Filepath;
 
-
         rankList.Clear();
 
         // using을 사용함으로써 비정상적인 예외가 발생할 경우에도 반드시 파일을 닫히도록 할 수 있다.
@@ -92,8 +101,8 @@ public class realresult : MonoBehaviour
 
             using (IDbCommand dbCmd = dbConnection.CreateCommand())  // EnterSqL에 명령 할 수 있다. 
             {
-                Debug.Log("됐다리");
-                string sqlQuery = "INSERT INTO RankTable VALUES('" + PlayerPrefs.GetString("number") + " ', '" + PlayerPrefs.GetString("name") + "','" + PlayerPrefs.GetString("justscore") + "')";
+                string sqlQuery = "INSERT INTO GameRankTable VALUES('" + PlayerPrefs.GetString("number") + " ', '" + PlayerPrefs.GetString("name") + "','" + PlayerPrefs.GetString("justscore") +
+                    "','" + PlayerPrefs.GetString("choco") + "','" + PlayerPrefs.GetString("candy") + "','" + time.ToString("hh:mm tt") + "')";
                 //string sqlQuery = "SELECT * FROM RankTable ORDER BY Score DESC";
 
                 dbCmd.CommandText = sqlQuery;
@@ -106,12 +115,4 @@ public class realresult : MonoBehaviour
             yield return null;
         }
     }
-
-
-
-
-
-
-
-
 }
