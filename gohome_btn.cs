@@ -7,7 +7,7 @@ public class gohome_btn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        transform.localPosition = new Vector2(0, -485);
+        transform.localPosition = new Vector2(0, -478);
         transform.localScale = new Vector2(1.5f, 1.5f);
     }
 	
